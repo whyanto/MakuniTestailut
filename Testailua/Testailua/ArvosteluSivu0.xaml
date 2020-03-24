@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Testailua.ArvosteluSivu0">
+
+    <Grid Style="{StaticResource PorkkanaVäriStack}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="AUTO"/>
+        </Grid.RowDefinitions>
+
+
+
+        <StackLayout Grid.Row="0" Margin="50,20,50,20" HorizontalOptions="Center" >
+            <Label Text="ELOVENA TÄYSJYVÄMURO NELJÄ VILJAA" TextColor="White" Style="{StaticResource PoppinsRegular}" FontSize="18" HorizontalTextAlignment="Center"/>
+            <Label Text="MAKU" TextColor="White" Style="{StaticResource PoppinsBold}" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+
+        <ScrollView Grid.Row="1" x:Name="Skroll" IsEnabled="False" >
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="500"/>
+                        <RowDefinition Height="500"/>
+                        <RowDefinition Height="500"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Grid.Row="0">
+                        <Label Text="Tykkäsitkö mausta?" TextColor="White" FontSize="20" Style="{StaticResource PoppinsBold}" HorizontalTextAlignment="Center"/>
+                        <Label HeightRequest="200" WidthRequest="200" Text="Kuva" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Label Text="En erityisemmin tykännyt" TextColor="White" FontSize="16" HorizontalTextAlignment="Center"/>
+                        <StackLayout Margin="20,0,20,0">
+                            <Slider MinimumTrackColor="White" MaximumTrackColor="Gray" ThumbColor="White" WidthRequest="30" Maximum="100" Minimum="0" Value="30" />
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1">
+                        <Label Text="Millainen oli tuotteen makeus?" TextColor="White" FontSize="20" Style="{StaticResource PoppinsBold}" HorizontalTextAlignment="Center"/>
+                        <StackLayout Orientation="Horizontal" HeightRequest="175">
+                            <Image Source="ArvosteluMakeusLiianvahan1.png" Aspect="AspectFit"/>
+                            <Image Source="ArvosteluMakeusSopiva1.png" Aspect="AspectFit"/>
+                            <Image Source="ArvosteluMakeusLiikaa1.png" Aspect="AspectFit"/>
+                        </StackLayout>
+                        <Label Text="Aivan liian makea" TextColor="White" FontSize="16" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="2">
+                        <Label Text="Miten aiot toimia jatkossa" TextColor="White" FontSize="20" Style="{StaticResource PoppinsBold}" HorizontalTextAlignment="Center"/>
+                        <Label HeightRequest="200" WidthRequest="200" Text="Kuva" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Label Text="En osta uudelleen ja kehoitan muitakin olemaana ostamatta" TextColor="White" FontSize="16" HorizontalTextAlignment="Center"/>
+                        <StackLayout Margin="20,0,20,0">
+                            <Slider MinimumTrackColor="White" MaximumTrackColor="Gray" ThumbColor="White" WidthRequest="30" Maximum="100" Minimum="0" Value="30" />
+                        </StackLayout>
+                    </StackLayout>
+
+                </Grid>
+
+            </StackLayout>
+
+        </ScrollView>
+
+
+
+
+
+        <StackLayout Grid.Row="2" Margin="20"  VerticalOptions="EndAndExpand">
+            <StackLayout >
+                <Button Text="NUOLIYLÖS" TextColor="White" FontSize="24" HorizontalOptions="EndAndExpand" Clicked="EDELLINEN" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="RUKSI" TextColor="White" FontSize="24"/>
+                <Button Text="NUOLIALAS" TextColor="White" FontSize="24" HorizontalOptions="EndAndExpand" Clicked="SEURAAVA" />
+            </StackLayout>
+
+        </StackLayout>
+
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Down" Swiped="EDELLINEN"/>
+            <SwipeGestureRecognizer Direction="Up" Swiped="SEURAAVA"/>
+        </Grid.GestureRecognizers>
+    </Grid>
+
+</ContentPage>

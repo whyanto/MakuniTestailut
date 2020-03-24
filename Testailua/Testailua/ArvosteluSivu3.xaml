@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Testailua.ArvosteluSivu3">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="AUTO"/>
+        </Grid.RowDefinitions>
+        
+        <StackLayout Margin="40">
+
+            <Label Margin="20,0,20,0" Text="ELOVENA TÄYSJYVÄMURO NELJÄ VILJAA" TextColor="White" Style="{StaticResource PoppinsRegular}" FontSize="18" HorizontalTextAlignment="Center"/>
+            <Label Text="Kuva" HeightRequest="200" WidthRequest="200" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label Text="Hurraa!" TextColor="White" FontSize="14" Style="{StaticResource PoppinsBold}" HorizontalTextAlignment="Center"/>
+            <Label Text="Vastasit kaikkiin kysymyksiin!" TextColor="White" FontSize="16" Style="{StaticResource PoppinsMedium}" HorizontalTextAlignment="Center"/>
+
+            <Label Text="Haluatko sanoa vielä jotain tuotteesta?" TextColor="White" FontSize="16" Style="{StaticResource PoppinsMedium}" HorizontalTextAlignment="Center"/>
+            <Entry Text="Kerro mielipiteesi..."/>
+
+            
+
+        </StackLayout>
+        <StackLayout Grid.Row="1"/>
+        <StackLayout Grid.Row="2" Margin="20">
+            <StackLayout>
+                <Button BackgroundColor="White" Text="VALMIS!" TextColor="DarkBlue" CornerRadius="30" Margin="50,0,50,0" HeightRequest="60"/>
+                <Button Text="NUOLIYLÖS" TextColor="White" FontSize="24" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="RUKSI" TextColor="White" FontSize="24"/>
+                <Button Text="NUOLIALAS" TextColor="White" FontSize="24" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </StackLayout>
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Down" Swiped="SwipeGestureRecognizer_Swiped"/>
+        </Grid.GestureRecognizers>
+    </Grid>
+</ContentPage>
